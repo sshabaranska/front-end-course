@@ -62,6 +62,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: box-shadow 0.25s, transform 0.25s;
+    overflow: hidden;
 }
 
 .card:hover {
