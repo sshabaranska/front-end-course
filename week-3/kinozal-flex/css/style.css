@@ -21,9 +21,12 @@ body {
     text-transform: uppercase;
 }
 
+.navigation {
+    display: flex;
+}
+
 .navigation__item,
 .navigation__label {
-    display: inline-block;
     padding: 0 32px;
     color: #fff;
     line-height: 3rem;
@@ -44,18 +47,26 @@ body {
 }
 
 .content {
-    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 75%;
+    border-left: 1px solid #222222;
  }
 
 .card {
-    display: inline-block;
     width: 45%;
     height: fit-content;
-    margin-bottom: 3%;
-    margin-left: 3%;
+    margin-bottom: 32px;
     background-color: #222222;
     border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.card:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #777;
+    transform: translateY(-0.25em);
 }
 
 .card__header {
@@ -73,6 +84,7 @@ body {
     left: 16px;
     bottom: 16px;
     color: #FF7474;
+    text-shadow: 1px 1px 4px rgba(255,253,236,0.7);
     font-weight: 900;
 }
 
@@ -80,6 +92,7 @@ body {
     position: absolute;
     left: 16px;
     bottom: 32px;
+    -webkit-text-stroke: 0.05rem rgba(0,0,0,.5);
     font-weight: 900;
 }
 
@@ -88,9 +101,14 @@ body {
 }
 
 .card__content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .footer {
